@@ -1,38 +1,52 @@
-<h1>Hungry for Burgers?</h1>
+<h1 class="text-center">HUNGRY for BURGERS? <i class="fas fa-hamburger"></i></h1>
+<h5 class="text-center">Choose from the available burgers on the left, or create your own custom burger!</h5>
 
-<h2>Burgers Waiting to be Devoured</h2>
+<hr/>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        <h3 class="text-center">What is your burger order?</h3>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="ca">Burger Name:</label>
+                    <input type="text" id="ca" name="name">
+                </div>
 
-<h2>Devoured Burgers</h2>
+                <div class="form-group">
+                    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+                    <input type="radio" name="devoured" value="0"> Not yet devoured<br>
+                    <button type="submit">Add Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+<hr/>
 
-<h2>What is your burger order?</h2>
-<form class="create-form">
+    <div class="row">
 
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <div class="form-group">
-    <br>
-    <input type="radio" name="devoured" value="1" checked>Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Not yet devoured
-  </div>
-
-  <button type="submit">Add Order</button>
-</form>
+        <div class="col-md-6">
+            <h3 class="text-center">Available Burgers</h3>
+                <ul>
+                {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=true}}
+                    {{/unless}}
+                {{/each}}
+                </ul>
+        </div>
+        
+        <div class="col-md-6">
+            <h3 class="text-center">Devoured Burgers</h3>
+                <ul>
+                {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                    {{/if}}
+                {{/each}}
+                </ul>
+        </div>
+        
+    </div>
+</div>
