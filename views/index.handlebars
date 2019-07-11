@@ -1,5 +1,5 @@
-<h1 class="text-center">HUNGRY for BURGERS? <i class="fas fa-hamburger"></i></h1>
-<h5 class="text-center">Choose from the available burgers on the left, or create your own custom burger!</h5>
+<h1 class="text-center text-danger">HUNGRY for BURGERS? <i class="fas fa-hamburger"></i></h1>
+<h5 class="text-center">Choose from the available burgers on the left, or create your own custom burger using the form below!</h5>
 
 <hr/>
 
@@ -27,7 +27,7 @@
     <div class="row">
 
         <div class="col-md-6">
-            <h3 class="text-center">Available Burgers</h3>
+            <h3 class="text-center text-danger">Available Burgers</h3>
                 <ul>
                 {{#each burgers}}
                     {{#unless devoured}}
@@ -38,7 +38,7 @@
         </div>
         
         <div class="col-md-6">
-            <h3 class="text-center">Devoured Burgers</h3>
+            <h3 class="text-center text-danger">Devoured Burgers</h3>
                 <ul>
                 {{#each burgers}}
                     {{#if devoured}}
